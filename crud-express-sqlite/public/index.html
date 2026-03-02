@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UAZ • Tasks CRUD</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img
+        class="brand-logo"
+        src="./assets/img/logoUAZ.png"
+        alt="UAZ"
+        loading="lazy"
+      />
+      <div class="brand-text">
+        <div class="brand-title">Universidad Autónoma de Zacatecas</div>
+        <div class="brand-subtitle">CRUD • Node.js + Express + SQLite</div>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <div class="card-head">
+        <h1 class="h1">Gestión de tareas</h1>
+        <p class="muted" id="metaText">—</p>
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <h2 class="h2">Nueva tarea</h2>
+
+          <form id="createForm" class="form">
+            <label class="field">
+              <span class="label">Título</span>
+              <input id="titleInput" class="input" type="text" maxlength="120" placeholder="Ej. Entregar práctica de BD" required />
+            </label>
+
+            <label class="field row">
+              <input id="doneInput" type="checkbox" />
+              <span class="label-inline">Marcar como hecha</span>
+            </label>
+
+            <button class="btn primary" type="submit">Crear</button>
+
+            <div class="note">
+              <span class="note-dot"></span>
+              <span>Tip: filtra por “Pendientes / Hechas” o busca por texto.</span>
+            </div>
+          </form>
+        </div>
+
+        <div class="panel">
+          <div class="panel-top">
+            <div>
+              <h2 class="h2">Listado</h2>
+              <div class="muted" id="pageText">—</div>
+            </div>
+
+            <div class="filters">
+              <input id="searchInput" class="input" placeholder="Buscar..." />
+              <select id="doneFilter" class="input">
+                <option value="">Todas</option>
+                <option value="0">Pendientes</option>
+                <option value="1">Hechas</option>
+              </select>
+              <select id="pageSize" class="input">
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="50">50</option>
+              </select>
+              <button id="refreshBtn" class="btn" type="button">Refrescar</button>
+            </div>
+          </div>
+
+          <div id="list" class="list"></div>
+
+          <div class="pager">
+            <button id="prevBtn" class="btn" type="button">←</button>
+            <button id="nextBtn" class="btn" type="button">→</button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <span id="statusText" class="muted">Listo.</span>
+      </footer>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
