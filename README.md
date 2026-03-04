@@ -1,9 +1,3 @@
-Perfecto. Tu BD **ya trae el modelo de biblioteca** (LIBRO, AUTOR, EJEMPLAR, PRESTAMO, RESERVA, etc.), pero tiene un detalle importante: **3 tablas tienen llaves foráneas apuntando a tablas “*_OLD”** (EDICION, LIBRO_AUTOR, RESERVA). Eso te va a romper inserts/updates si activas `foreign_keys = ON`. En este CRUD te dejo una **migración automática** que corrige eso **sin inventar tablas** (solo re-crea esas 3 con FKs correctas).
-
-Además te genero el **sistema completo**: catálogo (libros/autores/editoriales/ediciones/ejemplares), usuarios, préstamos con devolución, y reservas, con interfaz web **minimalista** (blanco/negro + azul tipo Facebook `#1877F2`). ([Brand Color Code][1])
-
----
-
 # 0) Coloca tu base de datos en el proyecto
 
 1. Copia tu archivo **`SQLite (6).db`** a la raíz del proyecto y renómbralo:
