@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Biblioteca — Sistema</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-title">Sistema de Biblioteca</div>
+      <div class="brand-subtitle">Catálogo · Préstamos · Reservas · Usuarios</div>
+    </div>
+    <nav class="top-actions">
+      <button class="chip" data-view="libros">Libros</button>
+      <button class="chip" data-view="autores">Autores</button>
+      <button class="chip" data-view="editoriales">Editoriales</button>
+      <button class="chip" data-view="ediciones">Ediciones</button>
+      <button class="chip" data-view="ejemplares">Ejemplares</button>
+      <button class="chip" data-view="usuarios">Usuarios</button>
+      <button class="chip" data-view="prestamos">Préstamos</button>
+      <button class="chip" data-view="reservas">Reservas</button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <h1 id="viewTitle" class="h1">Libros</h1>
+          <div id="viewHint" class="muted">Administra el catálogo y la circulación.</div>
+        </div>
+        <div class="filters">
+          <input id="search" class="input" placeholder="Buscar..." />
+          <button id="refresh" class="btn">Actualizar</button>
+          <button id="newBtn" class="btn primary">Nuevo</button>
+        </div>
+      </div>
+
+      <div id="content" class="panel"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div id="modalTitle" class="h2">Modal</div>
+          <div id="modalSubtitle" class="muted">—</div>
+        </div>
+        <button id="modalClose" class="btn">Cerrar</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+      <div id="modalFooter" class="modal-footer"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
